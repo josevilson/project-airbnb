@@ -1,0 +1,11 @@
+bigquery_project_airbnb:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: "airbnb-dbt"          # Nome do projeto no GCP
+      dataset: "airbnb_dbt"      # Nome do dataset em BigQuery
+      keyfile: "keyjson.json" # Caminho completo do keyfile.json
+      threads: 1                          # Número de threads para paralelismo
+      timeout_seconds: 300                # Tempo de timeout das consultas
