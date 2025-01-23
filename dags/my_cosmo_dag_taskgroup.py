@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from cosmos import DbtTaskGroup, ProjectConfig, ProfileConfig, ExecutionConfig, RenderConfig, TestBehavior
+from cosmos import DbtTaskGroup, ProjectConfig, ProfileConfig, ExecutionConfig, RenderConfig, TestBehavior,DbtDag
 from cosmos.profiles import GoogleCloudServiceAccountFileProfileMapping
 from airflow import DAG
 
@@ -27,7 +27,7 @@ execution_config = ExecutionConfig(
 # Criação do DAG
 with DAG(
     dag_id="my_cosmos_task_groupx",
-    schedule_interval="@daily",
+    schedule_interval=None,
     start_date=datetime(2023, 1, 1),
     catchup=False,
     default_args={"retries": 2},
@@ -36,12 +36,14 @@ with DAG(
     run_models_task_group = DbtTaskGroup(
         render_config=RenderConfig(
             test_behavior=TestBehavior.AFTER_ALL,
-            should_detach_multiple_parents_tests=True
+            #should_detach_multiple_parents_tests=True
+            select=["models/marts"]
         ),
-        group_id="run_all_models",
+        group_id="staging_models",
         project_config=project_config,
         profile_config=profile_config,
-        execution_config=execution_config
+        execution_config=execution_config,
+        
     )
 
     # Garantir que os testes rodem após os modelos
