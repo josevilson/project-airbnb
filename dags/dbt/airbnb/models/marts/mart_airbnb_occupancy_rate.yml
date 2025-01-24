@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: mart_airbnb_occupancy_rate
+    description: "Tabela com a taxa de ocupação mensal das listagens do Airbnb"
+    columns:
+      - name: year
+        description: "Ano da taxa de ocupação"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1900
+              max_value: 2100
+
+      - name: month
+        description: "Mês da taxa de ocupação"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 12
+
+      - name: avg_occupancy_rate
+        description: "Taxa de ocupação média para o mês"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1

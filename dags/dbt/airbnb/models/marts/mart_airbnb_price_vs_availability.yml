@@ -1,0 +1,38 @@
+version: 2
+models:
+  - name: mart_airbnb_price_vs_availability
+    description: "Tabela que analisa a relação entre preço e disponibilidade das listagens do Airbnb"
+    columns:
+      - name: listing_id
+        description: "ID da listagem"
+        tests:
+          - not_null
+
+      - name: available_days
+        description: "Número de dias disponíveis da listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 365
+
+      - name: unavailable_days
+        description: "Número de dias indisponíveis da listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 365
+
+      - name: avg_price
+        description: "Preço médio da listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: price_availability_trend
+        description: "Tendência de preço e disponibilidade"
+        tests:
+          - not_null

@@ -1,0 +1,152 @@
+version: 2
+
+models:
+  - name: int_airbnb_listings
+    description: "Tabela que contém informações detalhadas sobre listagens do Airbnb."
+    columns:
+      - name: listing_id
+        description: "Identificador único da listagem."
+        tests:
+          - not_null
+
+      - name: listing_title
+        description: "Título da listagem."
+        tests:
+          - not_null
+
+      - name: listing_description
+        description: "Descrição da listagem."
+        tests:
+          - not_null
+
+      - name: listing_neighbourhood_name
+        description: "Nome do bairro onde a listagem está localizada."
+        tests:
+          - not_null
+
+      - name: neighborhood_overview
+        description: "Descrição geral do bairro."
+        tests:
+          - not_null
+
+      - name: listing_picture_url
+        description: "URL da foto principal da listagem."
+        tests:
+          - not_null
+
+      - name: host_id
+        description: "Identificador único do anfitrião."
+        tests:
+          - not_null
+
+      - name: host_name
+        description: "Nome do anfitrião."
+        tests:
+          - not_null
+
+      - name: host_since_date
+        description: "Data em que o anfitrião começou a usar a plataforma."
+        tests:
+          - not_null
+
+      - name: host_location
+        description: "Localização do anfitrião."
+        tests:
+          - not_null
+
+      - name: host_about
+        description: "Descrição sobre o anfitrião."
+        tests:
+          - not_null
+
+      - name: host_response_time
+        description: "Tempo de resposta do anfitrião."
+        tests:
+          - not_null
+
+      - name: host_response_rate_percent
+        description: "Porcentagem de taxa de resposta do anfitrião."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: host_acceptance_rate_percent
+        description: "Porcentagem de taxa de aceitação do anfitrião."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: host_is_superhost_boolean
+        description: "Indica se o anfitrião é superhost (true/false)."
+        tests:
+          - not_null
+
+      - name: listing_property_type
+        description: "Tipo de propriedade da listagem (ex.: apartamento, casa)."
+        tests:
+          - not_null
+
+      - name: listing_room_type
+        description: "Tipo de quarto da listagem (ex.: quarto inteiro, compartilhado)."
+        tests:
+          - not_null
+
+      - name: listing_accommodates_amount
+        description: "Quantidade de pessoas que a listagem acomoda."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: listing_bathrooms_amount
+        description: "Número de banheiros na listagem."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: listing_beds_amount
+        description: "Número de camas na listagem."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: listing_price
+        description: "Preço da listagem por noite."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: availability_365
+        description: "Número de dias em que a listagem está disponível no ano."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: review_scores_rating
+        description: "Pontuação média de avaliação da listagem."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: reviews_per_month
+        description: "Número médio de avaliações por mês."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000

@@ -1,0 +1,8 @@
+models:
+  - name: mart_airbnb_reviews_summary
+    description: Tabela dos comentarios do clientes.
+    columns:
+    - name: listing_id
+      description: ID do anúncio
+      tests:
+        - not_null

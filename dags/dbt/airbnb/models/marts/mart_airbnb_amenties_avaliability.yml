@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: mart_airbnb_amenties_avaliability
+    description: "Tabela com dados agregados de disponibilidade e comodidades das listagens do Airbnb"
+    columns:
+      - name: listing_neighbourhood_name
+        description: "Nome do bairro da listagem"
+        tests:
+          - not_null
+
+      - name: listing_room_type
+        description: "Tipo de quarto da listagem"
+        tests:
+          - not_null
+
+      - name: avg_listing_beds_amount
+        description: "Número médio de camas por listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: avg_listing_bathrooms_amount
+        description: "Número médio de banheiros por listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: avg_listing_accommodates_amount
+        description: "Número médio de pessoas que as listagens acomodam"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: avg_availability_365
+        description: "Disponibilidade média ao longo dos 365 dias do ano"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000

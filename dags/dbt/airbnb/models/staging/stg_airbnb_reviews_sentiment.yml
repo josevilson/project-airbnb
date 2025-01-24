@@ -1,0 +1,51 @@
+version: 2
+models:
+  - name: stg_airbnb_reviews_sentiment
+    description: "Tabela com o sentimento das avaliações no Airbnb"
+    columns:
+      - name: listing_id
+        description: "Identificador único da listagem"
+        tests:
+          - not_null
+
+      - name: id_comment
+        description: "Identificador único do comentário"
+        tests:
+          - not_null
+
+      - name: reviewer_id
+        description: "Identificador único do revisor"
+        tests:
+          - not_null
+
+      - name: sentimento_positivo
+        description: "Valor do sentimento positivo"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: sentimento_negativo
+        description: "Valor do sentimento negativo"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: sentimento_classificado
+        description: "Classificação do sentimento (positivo/negativo)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: sentimento_erro
+        description: "Valor indicando erro no sentimento"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000

@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: stg_airbnb_reviews
+    description: "Tabela com as avaliações do Airbnb"
+    columns:
+      - name: listing_id
+        description: "Identificador único da listagem"
+        tests:
+          - not_null
+
+      - name: id
+        description: "Identificador único da avaliação"
+        tests:
+          - not_null
+
+      - name: date
+        description: "Data da avaliação"
+        tests:
+          - not_null
+
+      - name: reviewer_id
+        description: "Identificador único do revisor"
+        tests:
+          - not_null
+
+      - name: reviewer_name
+        description: "Nome do revisor"
+        tests:
+          - not_null
+
+      - name: comments
+        description: "Comentários feitos pelo revisor"
+        tests:
+          - not_null

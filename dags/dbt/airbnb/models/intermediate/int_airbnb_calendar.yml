@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: int_airbnb_calendar
+    description: "Tabela que armazena informações sobre a disponibilidade e preços de listagens no Airbnb."
+    columns:
+      - name: listing_id
+        description: "Identificador único da listagem."
+        tests:
+          - not_null
+
+      - name: listing_date_avaliable
+        description: "Data em que a listagem está disponível."
+        tests:
+          - not_null
+
+      - name: listing_avaliable
+        description: "Indica se a listagem está disponível (true/false)."
+        tests:
+          - not_null
+
+      - name: listing_price
+        description: "Preço da listagem por noite."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: listing_minimum_nights
+        description: "Número mínimo de noites que a listagem pode ser reservada."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: listing_maximum_nights
+        description: "Número máximo de noites que a listagem pode ser reservada."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000

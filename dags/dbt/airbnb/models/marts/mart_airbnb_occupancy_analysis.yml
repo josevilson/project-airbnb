@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: mart_airbnb_occupancy_analysis
+    description: "Tabela com a análise de ocupação das listagens do Airbnb"
+    columns:
+      - name: listing_neighbourhood_name
+        description: "Nome do bairro da listagem"
+        tests:
+          - not_null
+
+      - name: avg_availability
+        description: "Disponibilidade média das listagens"
+        tests:
+          - not_null
+
+      - name: total_listings
+        description: "Número total de listagens no bairro"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000

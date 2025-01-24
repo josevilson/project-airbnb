@@ -22,6 +22,10 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.3.0
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models

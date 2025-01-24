@@ -1,0 +1,57 @@
+version: 2
+models:
+  - name: mart_airbnb_comment_sentiment
+    description: "Tabela com dados sobre sentimentos dos comentários nas anuncios do Airbnb"
+    columns:
+      - name: listing_neighbourhood_name
+        description: "Nome do bairro da listagem"
+        tests:
+          - not_null
+
+      - name: comentarios_positivos
+        description: "Número de comentários positivos"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: comentarios_negativos
+        description: "Número de comentários negativos"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: comentarios_positivo_neutral
+        description: "Número de comentários positivos ou neutros"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: comentarios_total
+        description: "Número total de comentários"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+      - name: taxa_comentarios_positivos
+        description: "Taxa de comentários positivos"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+
+      - name: taxa_comentarios_negativos
+        description: "Taxa de comentários negativos"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1

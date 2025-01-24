@@ -1,0 +1,38 @@
+version: 2
+models:
+  - name: mart_airbnb_occupacy_rate_and_review_score
+    description: "Tabela com a taxa de ocupação e a média das pontuações de avaliação das listagens do Airbnb"
+    columns:
+      - name: listing_neighbourhood_name
+        description: "Nome do bairro da listagem"
+        tests:
+          - not_null
+
+      - name: listing_property_type
+        description: "Tipo da propriedade da listagem"
+        tests:
+          - not_null
+
+      - name: avg_review_score
+        description: "Média da pontuação de avaliações das listagens"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 10
+
+      - name: occupancy_rate
+        description: "Taxa de ocupação da listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+
+      - name: total_reviews
+        description: "Total de avaliações de uma listagem"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
