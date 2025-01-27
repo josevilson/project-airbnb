@@ -2,54 +2,32 @@ version: 2
 
 models:
   - name: int_airbnb_reviews
-    description: "Tabela que armazena as avaliações associadas às listagens do Airbnb, incluindo dados de sentimento."
+    description: "Tabela que contém informações detalhadas sobre avaliações do Airbnb."
     columns:
       - name: listing_id
         description: "Identificador único da listagem."
         tests:
           - not_null
 
-      - name: listing_neighbourhood_name
-        description: "Nome do bairro onde a listagem está localizada."
+      - name: review_id
+        description: "Identificador único da avaliação."
         tests:
           - not_null
 
-      - name: sentimento_positivo
-        description: "Quantidade de avaliações com sentimento positivo."
+      - name: review_date
+        description: "Data da avaliação."
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
-      - name: sentimento_negativo
-        description: "Quantidade de avaliações com sentimento negativo."
+      - name: reviewer_id
+        description: "Identificador único do avaliador."
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
-      - name: sentimento_erro
-        description: "Quantidade de avaliações que geraram erros no processamento do sentimento."
+      - name: reviewer_name
+        description: "Nome do avaliador."
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
-      - name: sentimento_positivo_neutral
-        description: "Quantidade de avaliações com sentimento positivo ou neutro."
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
-
-      - name: comentarios_total
-        description: "Número total de comentários associados à listagem."
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+      - name: comments
+        description: "Comentários da avaliação."

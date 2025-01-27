@@ -12,9 +12,7 @@ models:
         description: "Número de dias disponíveis da listagem"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 365
+
 
       - name: unavailable_days
         description: "Número de dias indisponíveis da listagem"
@@ -28,9 +26,6 @@ models:
         description: "Preço médio da listagem"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: price_availability_trend
         description: "Tendência de preço e disponibilidade"

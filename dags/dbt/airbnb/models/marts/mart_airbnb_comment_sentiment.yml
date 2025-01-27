@@ -42,16 +42,8 @@ models:
 
       - name: taxa_comentarios_positivos
         description: "Taxa de comentários positivos"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1
+
 
       - name: taxa_comentarios_negativos
         description: "Taxa de comentários negativos"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1
+

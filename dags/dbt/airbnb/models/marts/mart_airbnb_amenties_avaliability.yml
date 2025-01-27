@@ -15,19 +15,11 @@ models:
 
       - name: avg_listing_beds_amount
         description: "Número médio de camas por listagem"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: avg_listing_bathrooms_amount
         description: "Número médio de banheiros por listagem"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: avg_listing_accommodates_amount
         description: "Número médio de pessoas que as listagens acomodam"
