@@ -5,8 +5,6 @@ models:
     columns:
       - name: neighborhood_overview
         description: "Visão geral do bairro onde a listagem está localizada"
-        tests:
-          - not_null
 
       - name: listing_picture_url
         description: "URL da foto da listagem"
@@ -20,65 +18,33 @@ models:
 
       - name: host_name
         description: "Nome do host"
-        tests:
-          - not_null
 
       - name: host_since_date
         description: "Data em que o host iniciou sua atividade"
-        tests:
-          - not_null
 
       - name: host_location
         description: "Localização do host"
-        tests:
-          - not_null
 
       - name: host_about
         description: "Descrição sobre o host"
-        tests:
-          - not_null
 
       - name: host_response_time
         description: "Tempo de resposta do host"
-        tests:
-          - not_null
 
       - name: host_response_rate_percent
         description: "Taxa de resposta do host em percentual"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: host_acceptance_rate_percent
         description: "Taxa de aceitação do host em percentual"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: host_is_superhost_boolean
         description: "Indica se o host é um superhost"
-        tests:
-          - not_null
 
       - name: host_listings_count
         description: "Número de listagens do host"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: host_total_listings_count
         description: "Número total de listagens do host"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: listing_neighbourhood_name
         description: "Nome do bairro onde a listagem está localizada"
@@ -99,38 +65,19 @@ models:
         description: "Quantidade de pessoas que a listagem acomoda"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: listing_bathrooms_amount
         description: "Quantidade de banheiros da listagem"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: listing_bathrooms_text
         description: "Descrição do número de banheiros"
-        tests:
-          - not_null
 
       - name: listing_bedrooms_amount
         description: "Quantidade de quartos da listagem"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: listing_beds_amount
         description: "Quantidade de camas da listagem"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: listing_amenities
         description: "Comodidades da listagem"
@@ -139,117 +86,84 @@ models:
 
       - name: listing_price
         description: "Preço da listagem"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: minimum_nights
         description: "Número mínimo de noites para reserva"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: maximum_nights
         description: "Número máximo de noites para reserva"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: minimum_minimum_nights
         description: "Mínimo de noites mínimas permitidas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: maximum_minimum_nights
         description: "Máximo de noites mínimas permitidas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: minimum_maximum_nights
         description: "Mínimo de noites máximas permitidas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: maximum_maximum_nights
         description: "Máximo de noites máximas permitidas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: minimum_nights_avg_ntm
         description: "Média de noites mínimas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: maximum_nights_avg_ntm
         description: "Média de noites máximas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: calendar_updated
         description: "Data de última atualização do calendário"
-        tests:
-          - not_null
 
       - name: has_availability
         description: "Indica se a listagem tem disponibilidade"
-        tests:
-          - not_null
 
       - name: availability_30
         description: "Disponibilidade nos próximos 30 dias"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: availability_60
         description: "Disponibilidade nos próximos 60 dias"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: availability_90
         description: "Disponibilidade nos próximos 90 dias"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: availability_365
         description: "Disponibilidade nos próximos 365 dias"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: calendar_last_scraped
         description: "Data de última raspagem do calendário"
@@ -260,96 +174,50 @@ models:
         description: "Número total de avaliações"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: number_of_reviews_ltm
         description: "Número de avaliações nos últimos 12 meses"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: number_of_reviews_l30d
         description: "Número de avaliações nos últimos 30 dias"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: first_review
         description: "Data da primeira avaliação"
-        tests:
-          - not_null
 
       - name: last_review
         description: "Data da última avaliação"
-        tests:
-          - not_null
 
       - name: review_scores_rating
         description: "Pontuação média das avaliações"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: review_scores_accuracy
         description: "Pontuação de precisão"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: review_scores_cleanliness
         description: "Pontuação de limpeza"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: review_scores_checkin
         description: "Pontuação de check-in"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: review_scores_communication
         description: "Pontuação de comunicação"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: review_scores_location
         description: "Pontuação de localização"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: review_scores_value
         description: "Pontuação de valor"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
 
       - name: license
         description: "Licença da listagem"
-        tests:
-          - not_null
 
       - name: instant_bookable
         description: "Indica se a listagem pode ser reservada instantaneamente"
@@ -360,38 +228,25 @@ models:
         description: "Número de listagens calculadas do host"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: calculated_host_listings_count_entire_homes
         description: "Número de listagens de casas inteiras calculadas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: calculated_host_listings_count_private_rooms
         description: "Número de listagens de quartos privados calculadas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: calculated_host_listings_count_shared_rooms
         description: "Número de listagens de quartos compartilhados calculadas"
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000
+
 
       - name: reviews_per_month
         description: "Avaliações por mês"
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 1000000

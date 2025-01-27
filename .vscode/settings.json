@@ -1,0 +1,6 @@
+{
+    "type": "setting",
+    "settings": {
+      "python.pythonPath": "/home/dinho/.cache/pypoetry/virtualenvs/${workspaceFolder}/bin/python"
+    }
+}
