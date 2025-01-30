@@ -35,7 +35,7 @@ execution_config = ExecutionConfig(
 
 # Criação do DAG
 with DAG(
-    dag_id="my_cosm_dag_gpt_all",
+    dag_id="dag_dbt_to_bigquery",
     schedule_interval=None,
     start_date=datetime(2023, 1, 1),
     catchup=False,
