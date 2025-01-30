@@ -11,7 +11,7 @@ O projeto utiliza o conjunto de dados "Inside Airbnb", disponível no website [I
 ![Arquitetura geral do Projeto](imgs/arquitetura.jpeg)
 
 #### Dbt & Big Query
-![Dbt & Big Query](imgs/dbt-big.gif)
+![Airflow & Dbt Cosmos & Big Query](imgs/dbt-big.gif)
 
 ### Componentes Principais do Conjunto de Dados:
 1. **Listagem (Listing)**: Informações detalhadas sobre as propriedades, incluindo tipo, preço, localização, número de quartos, comodidades, entre outros.
