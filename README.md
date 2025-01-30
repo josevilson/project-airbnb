@@ -5,6 +5,14 @@
 
 O projeto utiliza o conjunto de dados "Inside Airbnb", disponível no website [Inside Airbnb](http://insideairbnb.com/), que oferece informações sobre listagens de hospedagem, avaliações de hóspedes e disponibilidade de calendário em várias cidades, incluindo o Rio de Janeiro.
 
+### Arquitetura
+
+#### Arquitetura do Projeto
+![Arquitetura geral do Projeto](imgs/arquitetura.jpeg)
+
+#### Dbt & Big Query
+![Dbt & Big Query](imgs/dbt-big.gif)
+
 ### Componentes Principais do Conjunto de Dados:
 1. **Listagem (Listing)**: Informações detalhadas sobre as propriedades, incluindo tipo, preço, localização, número de quartos, comodidades, entre outros.
 2. **Avaliações (Reviews)**: Informações sobre as avaliações dos hóspedes, incluindo data, identificador da propriedade e comentários.
