@@ -10,7 +10,7 @@ O projeto utiliza o conjunto de dados "Inside Airbnb", disponível no website [I
 #### Arquitetura do Projeto
 ![Arquitetura geral do Projeto](imgs/arquitetura.jpeg)
 
-#### Dbt & Big Query
+#### Airflow & Dbt Cosmos & Big Query
 ![Airflow & Dbt Cosmos & Big Query](imgs/dbt-big.gif)
 
 ### Componentes Principais do Conjunto de Dados:
