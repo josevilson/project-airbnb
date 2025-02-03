@@ -21,14 +21,14 @@ O projeto utiliza o conjunto de dados "Inside Airbnb", disponível no website [I
 O dicionário de dados está disponível no [site oficial](http://insideairbnb.com/).
 
 ## Objetivo do Projeto
-Este projeto tem como objetivo aplicar conceitos de engenharia de dados e garantir a qualidade dos dados, utilizando diversas ferramentas e técnicas. As principais etapas incluem a aquisição, limpeza, transformação e monitoramento da qualidade dos dados, utilizando o banco de dados PostgreSQL e ferramentas como dbt e Great Expectations.
+Este projeto tem como objetivo aplicar conceitos de engenharia de dados e garantir a qualidade dos dados, utilizando diversas ferramentas e técnicas. As principais etapas incluem a aquisição, limpeza, transformação e monitoramento da qualidade dos dados, utilizando o banco de dados Google BigQuery e ferramentas como dbt e Great Expectations.
 
 ## Passos do Projeto
 
 ### 1. Aquisição de Dados e Armazenamento - Camada Bronze
 - **Fonte**: Baixar os dados do Airbnb do Rio de Janeiro da fonte oficial ([Inside Airbnb](http://insideairbnb.com/)).
 - **Estruturação**: Realizar uma organização simples dos dados.
-- **Banco de Dados**: Criar um banco de dados PostgreSQL para armazenar os dados brutos das 3 tabelas principais ("Listing", "Reviews" e "Calendar") na camada "bronze".
+- **Banco de Dados**: Criar um banco de dados Google BigQuery para armazenar os dados brutos das 3 tabelas principais ("Listing", "Reviews" e "Calendar") na camada "bronze".
 
 ### 2. Data Clean - Camada Silver
 - **Tratamento de Dados**: Identificar e tratar valores ausentes, duplicatas e outliers nos dados da camada "bronze".
@@ -48,9 +48,9 @@ Este projeto tem como objetivo aplicar conceitos de engenharia de dados e garant
 - **dbt**: Usar a ferramenta dbt para realizar transformações e criar a camada "silver".
 - **Controle de Versão**: Manter o controle de versão dos modelos dbt e automatizar as execuções das transformações.
 
-### 6. Armazenamento de Dados em PostgreSQL - Camada Silver
-- **Banco de Dados**: Armazenar os dados transformados da camada "silver" no PostgreSQL.
-- **Integração dbt-PostgreSQL**: Estabelecer conexões para carregar os dados da camada "silver".
+### 6. Armazenamento de Dados em Google BigQuery - Camada Silver
+- **Banco de Dados**: Armazenar os dados transformados da camada "silver" no Google BigQuery.
+- **Integração dbt-Google BigQuery**: Estabelecer conexões para carregar os dados da camada "silver".
 
 ### 7. Validação de Expectativas com Great Expectations - Camada Silver
 - **Validações Adicionais**: Realizar validações adicionais para garantir a qualidade após cada transformação.
@@ -59,13 +59,13 @@ Este projeto tem como objetivo aplicar conceitos de engenharia de dados e garant
 ### 8. Transformação de Dados com dbt - Camada Gold
 - **dbt**: Utilizar o dbt para criar a camada "gold", aplicando agregações e cálculos especializados, como médias de preços por propriedade e por período.
 - **Controle de Versão**: Manter controle de versão dos modelos dbt e automatizar as transformações.
-- **Banco de Dados**: Armazenar os dados da camada "gold" no PostgreSQL, otimizados para consultas analíticas.
+- **Banco de Dados**: Armazenar os dados da camada "gold" no Google BigQuery, otimizados para consultas analíticas.
 
 ### 9. Apresentação e Discussão
-- **Apresentação**: Expor os resultados e as principais etapas do projeto, destacando a engenharia de dados, a qualidade dos dados e o uso de ferramentas como dbt, Great Expectations e PostgreSQL.
+- **Apresentação**: Expor os resultados e as principais etapas do projeto, destacando a engenharia de dados, a qualidade dos dados e o uso de ferramentas como dbt, Great Expectations e Google BigQuery.
 
 ## Ferramentas Utilizadas
-- **PostgreSQL**: Banco de dados para armazenar as camadas de dados (bronze, silver, gold).
+- **Google BigQuery**: Banco de dados para armazenar as camadas de dados (bronze, silver, gold).
 - **dbt (Data Build Tool)**: Para transformação e modelagem de dados nas camadas "silver" e "gold".
 - **Great Expectations**: Para validação e monitoramento contínuo da qualidade dos dados.
 
